@@ -1,5 +1,5 @@
 {
-  "name": "cookies.txt",
+  "name": "dunkatron-cookies",
   "description": "This is a wget cookies.txt formart parser for nodejs and request.",
   "tags": [
     "wget",
@@ -12,13 +12,13 @@
     "test": "node test/test.js"
   },
   "version": "0.1.1",
-  "author": "Inaction <Inaction.me@gmail.com> (http://inaction.me)",
+  "author": "Dunkatron (https://github.com/dunkatron/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxfli/node-cookies.txt.git"
+    "url": "git://github.com/dunkatron/dunkatron-cookies.git"
   },
   "bugs": {
-    "url": "https://github.com/mxfli/node-cookies.txt/issues"
+    "url": "https://github.com/dunkatron/dunkatron-cookies/issues"
   },
   "engines": {
     "node": ">= 0.4.1"

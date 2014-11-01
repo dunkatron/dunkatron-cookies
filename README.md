@@ -1,7 +1,7 @@
 cookies.txt
 ===========
 
-TestStatus:[![Test Status](https://travis-ci.org/mxfli/node-cookies.txt.png)](https://travis-ci.org/mxfli/node-cookies.txt)
+TestStatus:[![Test Status](https://travis-ci.org/dunkatron/node-cookies.txt.png)](https://travis-ci.org/dunkatron/node-cookies.txt)
 
 #README
  This is a _wget cookies.txt_ formart parser for nodejs.
@@ -17,15 +17,14 @@ TestStatus:[![Test Status](https://travis-ci.org/mxfli/node-cookies.txt.png)](ht
 ##Usage
 ```
 var cookie = require('cookies.txt');
-cookie.parse('your cookies.txt file path here.', function(jsonCookieObj){
-  //your codes here 
-  //...
+cookie.parse('your cookies.txt file path here.', function(err, jsonCookieObj){
+  // ...
 });
 ```
 ### Working with request module
 ```
 var request = require('request');
-var cookie = requeire('cookies.txt');
+var cookie = require('dunkatron-cookies');
 
 cookie.parse('your cookies.txt file path here.', function(jsonCookieObj){
   //your codes here 
