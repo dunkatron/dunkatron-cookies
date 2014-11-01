@@ -24,6 +24,8 @@
     "node": ">= 0.4.1"
   },
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "ip": "^0.3.2"
+  },
   "devDependencies": {}
 }

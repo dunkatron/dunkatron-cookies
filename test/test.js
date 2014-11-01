@@ -12,7 +12,6 @@ ctp.parse(cookieFile, function (err, result) {
   var cookieString = ctp.getCookieString(result, 'http://www.test.com/');
   assert.equal(cookieString.split(';').length, 1);
 
-  console.log('get Cookie String:', cookieString);
   var cookieString2 = ctp.getCookieString(result, 'http://www.test1.com/');
   assert.equal(cookieString2, '');
 

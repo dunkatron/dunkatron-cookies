@@ -4,6 +4,7 @@
 var fs = require('fs');
 var url = require('url');
 var assert = require('assert');
+var ip = require('ip');
 
 var cookieDefine = ['domain', 'httponly', 'path', 'secure', 'expires', 'name', 'value'];
 
@@ -52,13 +53,40 @@ var parse = function (file, callback) {
   });
 };
 
+// See RFC2109 'domain-match' definition
+var domainMatch = function (a, b) {
+  // Both are IP's and are equal
+
+  try {
+    return ip.isEqual(a, b);
+  } catch (ex) {
+    if (a.indexOf('.') != 0 && b.indexOf('.') != 0) {
+      return a === b;
+    } else if (b.indexOf('.') == 0) {
+      var aSplit = a.split('.');
+      var bSplit = b.split('.');
+
+      var aTail = aSplit.pop(), bTail = bSplit.pop();
+
+      while (aTail === bTail && bSplit.length > 0) {
+        aTail = aSplit.pop();
+        bTail = bSplit.pop();
+      }
+
+      return bTail === '';
+    } else {
+      return false;
+    }
+  }
+};
+
 exports.parse = parse;
 
 exports.getCookieString = function (cookies, urlStr) {
   var urlObj = url.parse(urlStr, false);
 
   var result = cookies.reduce(function (pre, cookie) {
-    if (urlObj.hostname === cookie.domain && urlObj.pathname.indexOf(cookie.path) === 0) {
+    if (domainMatch(urlObj.hostname, cookie.domain) && urlObj.pathname.indexOf(cookie.path) === 0) {
       pre.push(cookie.name + '=' + cookie.value);
     }
     return pre;
