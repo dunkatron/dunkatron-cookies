@@ -11,7 +11,7 @@
   "scripts": {
     "test": "node test/test.js"
   },
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Dunkatron (https://github.com/dunkatron/)",
   "repository": {
     "type": "git",
