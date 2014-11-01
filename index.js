@@ -49,6 +49,19 @@ var parse = function (file, callback) {
 
     });
 
+    parsedCookies.getCookieString = function (urlStr) {
+      var urlObj = url.parse(urlStr, false);
+
+      var result = this.reduce(function (pre, cookie) {
+        if (domainMatch(urlObj.hostname, cookie.domain) && urlObj.pathname.indexOf(cookie.path) === 0) {
+          pre.push(cookie.name + '=' + cookie.value);
+        }
+        return pre;
+      }, []).join(';');
+
+      return result;
+    };
+
     callback(null, parsedCookies);
   });
 };
@@ -81,16 +94,3 @@ var domainMatch = function (a, b) {
 };
 
 exports.parse = parse;
-
-exports.getCookieString = function (cookies, urlStr) {
-  var urlObj = url.parse(urlStr, false);
-
-  var result = cookies.reduce(function (pre, cookie) {
-    if (domainMatch(urlObj.hostname, cookie.domain) && urlObj.pathname.indexOf(cookie.path) === 0) {
-      pre.push(cookie.name + '=' + cookie.value);
-    }
-    return pre;
-  }, []).join(';');
-
-  return result;
-};
