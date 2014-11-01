@@ -1,18 +1,15 @@
-cookies.txt
-===========
+Dunkatron Cookies
+=================
 
 TestStatus:[![Test Status](https://travis-ci.org/dunkatron/node-cookies.txt.png)](https://travis-ci.org/dunkatron/node-cookies.txt)
 
 #README
- This is a _wget cookies.txt_ formart parser for nodejs.
-
- Convert wget cookies.txt format file into JSON boject.
-
- Working whith `http.requst` or `request module`.
+This is a wget cookies.txt format parser for Node.js.
+It lets you parse cookies.txt format cookies into JavaScript objects, and generate cookie header strings suitable for making HTTP requests.
 
 
 ##Install
-```npm install cookies.txt```
+```npm install dunkatron-cookies```
 
 ##Usage
 ```
