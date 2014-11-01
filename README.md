@@ -1,7 +1,7 @@
 Dunkatron Cookies
 =================
 
-TestStatus:[![Test Status](https://travis-ci.org/dunkatron/node-cookies.txt.png)](https://travis-ci.org/dunkatron/node-cookies.txt)
+TestStatus:[![Test Status](https://travis-ci.org/dunkatron/dunkatron-cookies.png)](https://travis-ci.org/dunkatron/dunkatron-cookies)
 
 #README
 This is a wget cookies.txt format parser for Node.js.
